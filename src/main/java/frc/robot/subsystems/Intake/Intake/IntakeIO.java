@@ -1,3 +1,5 @@
+package frc.robot.subsystems.Intake.Intake;
+
 // Copyright 2021-2024 FRC 6328
 // http://github.com/Mechanical-Advantage
 //
@@ -17,7 +19,7 @@ import org.littletonrobotics.junction.AutoLog;
 
 public interface IntakeIO {
   @AutoLog
-  public static class IntakeIO {
+  public static class IntakeInputs {
     public double positionRad = 0.0;
     public double velocityRadPerSec = 0.0;
     public double appliedVolts = 0.0;

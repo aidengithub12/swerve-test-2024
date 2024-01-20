@@ -11,7 +11,7 @@
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU General Public License for more details.
 // flywheel
-package frc.robot.subsystems.Intake;
+package frc.robot.subsystems.Intake.Intake;
 
 import com.revrobotics.CANSparkBase.ControlType;
 import com.revrobotics.CANSparkLowLevel.MotorType;
@@ -28,16 +28,16 @@ import edu.wpi.first.math.util.Units;
  * NOTE: To use the Spark Flex / NEO Vortex, replace all instances of "CANSparkMax" with
  * "CANSparkFlex".
  */
-public class ShooterIOSparkMax implements ShooterIO {
+public class IntakeIOSparkMax implements IntakeIO {
   private static final double GEAR_RATIO = 1.5;
 
   private final CANSparkMax Motor1 = new CANSparkMax(0, MotorType.kBrushless);
   private final CANSparkMax Motor2 = new CANSparkMax(1, MotorType.kBrushless);
-  private fianl CANSparkMax Motor3 = new CANSparkMax(2, MotorType.kBrushless);
+  private final CANSparkMax Motor3 = new CANSparkMax(2, MotorType.kBrushless);
   private final RelativeEncoder encoder = Motor2.getEncoder();
 
 
-  public ShooterIOSparkMax() {
+  public void ShooterIOSparkMax() {
     Motor1.restoreFactoryDefaults();
     Motor2.restoreFactoryDefaults();
     Motor3.restoreFactoryDefaults();
@@ -60,7 +60,7 @@ public class ShooterIOSparkMax implements ShooterIO {
   }
 
   @Override
-  public void updateInputs(LoggableInputs inputs) {
+  public void updateInputs(IntakeInputs inputs) {
     inputs.velocityRadPerSec =
         Units.rotationsPerMinuteToRadiansPerSecond(encoder.getVelocity() / GEAR_RATIO);
     inputs.appliedVolts = Motor1.getAppliedOutput() * Motor1.getBusVoltage();
@@ -68,7 +68,7 @@ public class ShooterIOSparkMax implements ShooterIO {
   }
 
   public double getVelocityRPM() {
-    return ((ShooterIOSparkMax) encoder).getVelocityRPM();
+    return encoder.getVelocity();
   }
   public double getCharacterizationVelocity() {
     return encoder.getVelocity();

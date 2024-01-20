@@ -17,12 +17,14 @@ import edu.wpi.first.math.controller.SimpleMotorFeedforward;
 import edu.wpi.first.math.util.Units;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
+import frc.robot.subsystems.flywheel.ShooterIO.ShooterIOInputs;
+
 import org.littletonrobotics.junction.AutoLogOutput;
 import org.littletonrobotics.junction.Logger;
 
-public class Flywheel extends SubsystemBase {
-  private final FlywheelIO io;
-  private final FlywheelIOInputsAutoLogged inputs = new FlywheelIOInputsAutoLogged();
+public class Shooter extends SubsystemBase {
+  private final ShooterIO io;
+  private final ShooterIOInputs inputs = new loggea();
   private final SimpleMotorFeedforward ffModel;
 
   /** Creates a new Flywheel. */
