@@ -15,7 +15,6 @@ package frc.robot.subsystems.Intake.Intake;
 
 import com.revrobotics.CANSparkBase.ControlType;
 import com.revrobotics.CANSparkLowLevel.MotorType;
-import frc.robot.subsystems.*;
 import org.littletonrobotics.junction.inputs.LoggableInputs;
 
 import com.revrobotics.CANSparkMax;
