@@ -11,13 +11,13 @@
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU General Public License for more details.
 
-package frc.robot.subsystems.flywheel;
+
 
 import org.littletonrobotics.junction.AutoLog;
 
-public interface ShooterIO {
+public interface IntakeIO {
   @AutoLog
-  public static class ShooterIOInputs {
+  public static class IntakeIO {
     public double positionRad = 0.0;
     public double velocityRadPerSec = 0.0;
     public double appliedVolts = 0.0;
@@ -25,7 +25,7 @@ public interface ShooterIO {
   }
 
   /** Updates the set of loggable inputs. */
-  public default void updateInputs(FlywheelIOInputs inputs) {}
+  public default void updateInputs(IntakeIO inputs) {}
 
   /** Run open loop at the specified voltage. */
   public default void setVoltage(double volts) {}
